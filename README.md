@@ -20,7 +20,7 @@ It helps builders inspect what changed, write clear public updates, capture scre
 - FFmpeg if you want to convert screenshots to WebP.
 - A Typefully API token for remote draft creation or scheduling.
 
-Set the token:
+Set the token on Windows PowerShell:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("TYPEFULLY_API_TOKEN", "your-token", "User")
@@ -32,7 +32,19 @@ Reload it in the current PowerShell session:
 $env:TYPEFULLY_API_TOKEN = [Environment]::GetEnvironmentVariable("TYPEFULLY_API_TOKEN", "User")
 ```
 
+Set the token on macOS or Linux:
+
+```bash
+export TYPEFULLY_API_TOKEN="your-token"
+```
+
 ## Usage
+
+Install the skill:
+
+```bash
+npx skills install https://github.com/Shellishack/dev-social-media-skill
+```
 
 Dry-run a Typefully payload:
 

@@ -5,7 +5,7 @@ description: Journal shipped work, generate social release drafts, capture app s
 
 # Dev Social Media
 
-Use this skill when a user wants to journal what they built, turn recent project or product work into public update posts, capture proof screenshots, and create or schedule posts through Typefully. It is intentionally project-agnostic and should work for web developers, indie hackers, product builders, open source maintainers, designers, and anyone else documenting progress in public.
+Use this skill when a user wants to journal what they built, turn recent project or product work into public update posts, capture proof screenshots, and create or schedule posts through Typefully. It is intentionally project-agnostic and should work for web developers, indie hackers, product builders, open source maintainers, designers, and anyone else documenting progress in public. The commands are designed to work across Windows PowerShell, macOS, and Linux when Node.js and the required local tools are available.
 
 ## Environment
 
@@ -51,6 +51,12 @@ Capture a screenshot from a running web app:
 node C:/github/dev-social-media-skill/scripts/capture-screenshots.ts --url http://127.0.0.1:3000 --out C:/tmp/social-release --name app-release
 ```
 
+On macOS or Linux, use the local path where this skill is installed:
+
+```bash
+node ./scripts/capture-screenshots.ts --url http://127.0.0.1:3000 --out /tmp/social-release --name app-release
+```
+
 Capture after clicking a UI element:
 
 ```bash
@@ -79,6 +85,12 @@ Create a Typefully draft after user approval:
 
 ```bash
 node C:/github/dev-social-media-skill/scripts/publish-typefully.ts --file C:/tmp/social-release/post.md --platforms x,linkedin --create
+```
+
+macOS/Linux equivalent from the skill repository:
+
+```bash
+node ./scripts/publish-typefully.ts --file /tmp/social-release/post.md --platforms x,linkedin --create
 ```
 
 Schedule through Typefully after user approval:
