@@ -1,0 +1,24 @@
+{
+  "name": "dev-social-media-skill",
+  "version": "0.1.0",
+  "description": "A Codex skill for journaling project progress and creating or scheduling Typefully social posts.",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "dry-run": "node ./scripts/publish-typefully.ts --text \"Shipping a new product update today.\" --platforms x,linkedin",
+    "check:social": "node ./scripts/publish-typefully.ts --text \"Social payload check.\" --platforms x,linkedin",
+    "check:screenshot": "node ./scripts/capture-screenshots.ts --url https://example.com --out ./tmp --name example"
+  },
+  "keywords": [
+    "codex",
+    "skill",
+    "social-media",
+    "typefully",
+    "developer-tools",
+    "build-in-public"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}
