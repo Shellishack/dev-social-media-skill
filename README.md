@@ -7,6 +7,7 @@ It helps builders inspect what changed, write clear public updates, capture scre
 ## What It Does
 
 - Turns recent project work into publishable social copy.
+- Reuses prior ChatGPT drafts when users provide pasted text, attachments, or exported draft files.
 - Supports X/Twitter thread drafts and LinkedIn post drafts through Typefully.
 - Captures app screenshots from a local or deployed URL.
 - Keeps credentials in environment variables, not files.
@@ -75,6 +76,19 @@ Capture a screenshot:
 ```powershell
 node ./scripts/capture-screenshots.ts --url http://127.0.0.1:3000 --out C:/tmp/social-release --name app-release
 ```
+
+## Using Prior ChatGPT Drafts
+
+The skill can use previous ChatGPT drafts as source material, but only when the draft is available to the agent. It cannot automatically read private ChatGPT history.
+
+Provide a prior draft by:
+
+- pasting it into the current chat
+- attaching a `.md`, `.txt`, or exported `.json` file
+- placing it in the project workspace
+- pointing the agent to a readable local file path
+
+The agent should then compare the draft against the current codebase, preserve your intent and voice, remove outdated claims, and prepare updated social posts for review.
 
 ## Thread Formatting
 

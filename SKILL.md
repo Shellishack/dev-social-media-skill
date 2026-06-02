@@ -21,6 +21,7 @@ Do not paste tokens into commands, files, screenshots, or social drafts. Do not 
    - Read recent commits, README, package metadata, changelogs, changed files, and any existing screenshots.
    - Identify what actually shipped. Do not invent metrics, users, integrations, or maturity.
    - Capture the user's personal story when they provide one, but keep it grounded in facts.
+   - Reuse prior ChatGPT drafts when the user provides them as pasted text, attachments, exported files, or readable workspace files.
 
 2. Capture screenshots when the update is visual.
    - Use `scripts/capture-screenshots.ts` with explicit CLI arguments.
@@ -133,6 +134,25 @@ First post.
 ---
 Second post.
 ```
+
+## Prior ChatGPT Drafts
+
+Use previous ChatGPT drafts as source material when available. Do not claim access to a user's private ChatGPT history unless the current environment exposes it. The user must provide the draft text directly, attach a file, point to a readable export, or place the draft in the workspace.
+
+Good source forms:
+
+- pasted draft text in the current chat
+- Markdown, text, or JSON export files
+- local draft files in the current repository or a temporary folder
+- screenshots only when text extraction is practical and the user approves
+
+When prior drafts are provided:
+
+- Preserve the user's original intent and voice.
+- Reconcile the draft against the current codebase before posting.
+- Keep outdated claims out of the final post.
+- Mention the source material in your working notes, not in the public post unless the user asks.
+- Ask before publishing if the provided draft contains sensitive, private, or unfinished information.
 
 ## Drafting Rules
 
