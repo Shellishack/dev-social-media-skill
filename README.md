@@ -7,7 +7,7 @@ It helps builders inspect what changed, write clear public updates, capture scre
 ## What It Does
 
 - Turns recent project work into publishable social copy.
-- Reuses prior ChatGPT drafts when users provide pasted text, attachments, or exported draft files.
+- Reuses prior Typefully drafts when users provide a Typefully draft URL, draft ID, pasted text, or exported draft files.
 - Supports X/Twitter thread drafts and LinkedIn post drafts through Typefully.
 - Captures app screenshots from a local or deployed URL.
 - Keeps credentials in environment variables, not files.
@@ -77,18 +77,20 @@ Capture a screenshot:
 node ./scripts/capture-screenshots.ts --url http://127.0.0.1:3000 --out C:/tmp/social-release --name app-release
 ```
 
-## Using Prior ChatGPT Drafts
+## Using Prior Typefully Drafts
 
-The skill can use previous ChatGPT drafts as source material, but only when the draft is available to the agent. It cannot automatically read private ChatGPT history.
+The skill can use previous Typefully drafts as source material. If `TYPEFULLY_API_TOKEN` is available, the agent can read or update drafts through the Typefully API when you provide a draft URL, draft ID, or social set ID.
 
 Provide a prior draft by:
 
+- sharing a Typefully draft URL such as `https://typefully.com/?d=<draft_id>&a=<social_set_id>`
+- providing a Typefully draft ID and social set ID
 - pasting it into the current chat
 - attaching a `.md`, `.txt`, or exported `.json` file
 - placing it in the project workspace
 - pointing the agent to a readable local file path
 
-The agent should then compare the draft against the current codebase, preserve your intent and voice, remove outdated claims, and prepare updated social posts for review.
+The agent should then compare the draft against the current codebase, preserve your intent and voice, remove outdated claims, preserve useful media attachments and scheduling settings when appropriate, and prepare updated social posts for review.
 
 ## Thread Formatting
 
