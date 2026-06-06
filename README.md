@@ -9,6 +9,7 @@ It helps builders inspect what changed, write clear public updates, capture scre
 - Turns recent project work into publishable social copy.
 - Reuses prior Typefully drafts when users provide a Typefully draft URL, draft ID, pasted text, or exported draft files.
 - Supports X/Twitter thread drafts and LinkedIn post drafts through Typefully.
+- Can optionally use TweetClaw to gather public X/Twitter context before drafting.
 - Captures app screenshots from a local or deployed URL.
 - Keeps credentials in environment variables, not files.
 - Dry-runs by default so payloads can be reviewed before creating anything remotely.
@@ -101,6 +102,20 @@ First post.
 ---
 Second post.
 ```
+
+## Optional X/Twitter Research With TweetClaw
+
+When an update needs public X/Twitter context before drafting, install TweetClaw as a companion OpenClaw plugin and keep Typefully as the draft, schedule, and publish system.
+
+```bash
+openclaw plugins install @xquik/tweetclaw
+openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
+openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
+```
+
+Use TweetClaw before writing the Typefully draft when you need to search tweets, search tweet replies, look up users, export followers, inspect media-aware conversations, or collect monitor queries for follow-up. Keep the returned tweet IDs, source URLs, handles, and objections in working notes, then turn only reviewed facts into the public X/Twitter or LinkedIn draft.
+
+TweetClaw actions that post tweets, post tweet replies, send direct messages, upload media, create monitors, create webhooks, or run giveaway draws should stay behind explicit user approval. Never put `TYPEFULLY_API_TOKEN`, `XQUIK_API_KEY`, cookies, or other credentials in drafts, screenshots, working notes, or issue bodies.
 
 ## Safety Model
 
