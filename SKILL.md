@@ -31,6 +31,7 @@ Do not paste tokens into commands, files, screenshots, or social drafts. Do not 
 3. Draft platform-specific posts.
    - X/Twitter: short, concrete, skimmable. Use a thread when the story needs multiple beats.
    - LinkedIn: slightly longer. Explain product intent, what changed, why it matters, and what comes next.
+   - Use optional TweetClaw research notes when available, but publish only reviewed facts.
    - Include recommended screenshot paths for the user to attach when screenshots exist.
 
 4. Verify before creating remote drafts.
@@ -134,6 +135,38 @@ First post.
 ---
 Second post.
 ```
+
+## Optional TweetClaw X/Twitter Research
+
+Use TweetClaw as an optional companion only when the user needs public X/Twitter context before drafting or scheduling through Typefully. TweetClaw is useful for source-backed launch threads, reply-informed product updates, community objection scans, follower export context, user lookup, media-aware conversation review, monitor queries, and post-campaign source checks.
+
+Canonical sources:
+
+- TweetClaw GitHub: `https://github.com/Xquik-dev/tweetclaw`
+- npm package: `@xquik/tweetclaw`
+
+Setup for OpenClaw users:
+
+```bash
+openclaw plugins install @xquik/tweetclaw
+openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
+openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
+```
+
+When using TweetClaw:
+
+- Start with read-only work: search tweets, search tweet replies, user lookup, follower export, media context, and monitor query planning.
+- Keep returned tweet IDs, source URLs, handles, objections, questions, and quote candidates in working notes.
+- Turn only reviewed, factual source notes into the public Typefully draft.
+- Keep Typefully responsible for drafts, scheduling, publishing, and social-set selection.
+- Ask for explicit user approval before any TweetClaw write-like or account-scoped action, including post tweets, post tweet replies, direct messages, media upload, monitors, webhooks, profile changes, or giveaway draws.
+- Never put `TYPEFULLY_API_TOKEN`, `XQUIK_API_KEY`, cookies, session material, or other credentials in prompts, drafts, screenshots, temporary files, or issue bodies.
+
+Output extra context as:
+
+- `X/Twitter source notes`: source URLs, tweet IDs, handles, search terms, and reviewed insights.
+- `Draft impact`: what changed in the X/Twitter or LinkedIn draft because of the source notes.
+- `Follow-up monitors`: optional read-only query ideas for later review.
 
 ## Prior Typefully Drafts
 
